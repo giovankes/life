@@ -4,9 +4,9 @@
   "description": "",
   "keywords": [],
   "author": "Giotje",
-  "main": "main.js",
+  "main": "./server.js",
   "scripts": {
-    "start": "nodemon - exec babel-node ./server.js"
+    "start": "nodemon - exec babel-node server.js"
   },
   "license": "ISC",
   "dependencies": {
