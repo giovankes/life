@@ -1,8 +1,3 @@
-# carbon foot print database.
+# NIMA
 
-## public database in which i'll track my carbon foot print
-
-
-### information:
-information about the usage of NS can be found [here](https://www.ns.nl/over-ns/duurzaamheid/fossielvrij/groene-energie-voor-trein-bus-en-station.html)
-
+link to [notion](https://giotje.dev/assessment-3d9d30c6808047caae890d272d34289f) can be found [here](https://giotje.dev/assessment-3d9d30c6808047caae890d272d34289f)
