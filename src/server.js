@@ -35,15 +35,17 @@ const server = app.listen(8082, function () {
   console.log('express server started at: http://%s:%s', host, port);
 });
 
+//NOTE: websockets is for whenever the front-end gets build
+
 // handles websockets for inserting data
-
-const clients = new Map();
-
-wss.on('connection', (wss, request, client) => {
-  clients.set(wss);
-  wss.on('message', (data) => {
-    const message = JSON.parse(data);
-
-    // insert message
-  });
-});
+//
+//const clients = new Map();
+//
+//wss.on('connection', (wss, request, client) => {
+//  clients.set(wss);
+//  wss.on('message', (data) => {
+//    const message = JSON.parse(data);
+//
+//    // insert message
+//  });
+//});
