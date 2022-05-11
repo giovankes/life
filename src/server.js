@@ -4,11 +4,12 @@ import cors from 'cors';
 import consola from 'consola';
 
 import models, { connectDb } from './models';
+import routes from './routes';
 
 const app = express();
 const { PORT } = process.env;
 
-//NOTE: built-in middleware
+// NOTE: built-in middleware //
 app.use(
   express.json({
     limit: '100mb',
@@ -17,8 +18,7 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-//NOTE: custom middleware
-
+// NOTE: custom middleware //
 app.use(async (req, res, next) => {
   req.context = {
     models,
@@ -26,6 +26,12 @@ app.use(async (req, res, next) => {
   };
   next();
 });
+
+// NOTE: * Routes * //
+
+app.use('/session', routes.session);
+app.use('/users', routes.user);
+app.use('/messages', routes.message);
 
 connectDb().then(async () => {
   app.listen(PORT || 261120, () => {
