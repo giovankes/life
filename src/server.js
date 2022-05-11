@@ -1,51 +1,22 @@
+import 'dotenv/config';
 import express from 'express';
-import bodyParser from 'body-parser';
-import WebSocket from 'ws';
-import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
+import cors from 'cors';
+import consola from 'consola';
 
-require('events').EventEmitter.defaultMaxListeners = 15;
-
-dotenv.config();
+import { connectDb } from './models';
 
 const app = express();
-
-const { uri } = process.env;
-
-const urlencodedParser = bodyParser.urlencoded({
-  extended: true,
-});
-
-const jsonParser = bodyParser.json();
-
-const wss = new WebSocket.Server({
-  port: 2611,
-});
-
+const { PORT } = process.env;
 app.use(
   express.json({
     limit: '100mb',
   })
 );
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
-const server = app.listen(8082, function () {
-  const host = server.address().address;
-  const port = server.address().port;
-
-  console.log('express server started at: http://%s:%s', host, port);
+connectDb().then(async () => {
+  app.listen(PORT || 261120, () => {
+    consola.info(`app is listening on port: ${PORT}`);
+  });
 });
-
-//NOTE: websockets is for whenever the front-end gets build
-
-// handles websockets for inserting data
-//
-//const clients = new Map();
-//
-//wss.on('connection', (wss, request, client) => {
-//  clients.set(wss);
-//  wss.on('message', (data) => {
-//    const message = JSON.parse(data);
-//
-//    // insert message
-//  });
-//});
