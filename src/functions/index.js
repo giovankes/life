@@ -1,3 +1,3 @@
 import { db_insert } from './database.js';
-
-export { db_insert };
+import seed from './seed.js';
+export { db_insert, seed };

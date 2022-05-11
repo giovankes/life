@@ -5,7 +5,7 @@ import consola from 'consola';
 
 import models, { connectDb } from './models';
 import routes from './routes';
-
+import { seed } from './functions';
 const app = express();
 const { PORT } = process.env;
 
@@ -38,3 +38,7 @@ connectDb().then(async () => {
     consola.info(`app is listening on port: ${PORT}`);
   });
 });
+
+// NOTE: * seed the database * //
+
+//seed();
