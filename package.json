@@ -1,9 +1,8 @@
 {
-  "name": "carbon-footprint-database",
+  "name": "nima",
   "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "author": "Giotje",
+  "description": "lol",
+  "author": "giovankes",
   "main": "./server.js",
   "scripts": {
     "start": "nodemon --exec babel-node ./src/server.js"
