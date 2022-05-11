@@ -20,11 +20,11 @@ UserSchema.statics.findByLogin = async function (login) {
   return user;
 };
 
-//NOTE: this is for later in development
+// NOTE: this is for later in development //
 
-//UserSchema.pre('remove', function(next){
+// UserSchema.pre('remove', function(next){
 //  this.model('Message').deleteMany({user:this._id}m next)
-//})
+// })
 
 const User = mongoose.model('User', UserSchema);
 
