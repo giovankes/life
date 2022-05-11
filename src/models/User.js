@@ -6,6 +6,11 @@ const UserSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
+  id: {
+    type: Number,
+    unique: true,
+    required: true,
+  },
 });
 
 UserSchema.statics.findByLogin = async function (login) {
