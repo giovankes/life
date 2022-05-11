@@ -41,4 +41,4 @@ connectDb().then(async () => {
 
 // NOTE: * seed the database * //
 
-//seed();
+// seed();
