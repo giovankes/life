@@ -1,5 +1,6 @@
 import { MongoClient } from 'mongodb';
 import consola from 'consola';
+
 require('dotenv').config({
   path: '../../.env',
 });

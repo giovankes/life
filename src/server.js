@@ -15,11 +15,15 @@ app.use(
     limit: '100mb',
   })
 );
+
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // NOTE: custom middleware //
 app.use(async (req, res, next) => {
+  req.body = {
+    ...req.body,
+  };
   req.context = {
     models,
     me: await models.User.findByLogin('giovankes'),
@@ -32,6 +36,7 @@ app.use(async (req, res, next) => {
 app.use('/session', routes.session);
 app.use('/users', routes.user);
 app.use('/messages', routes.message);
+app.use('/transport', routes.transport);
 
 connectDb().then(async () => {
   app.listen(PORT || 261120, () => {
