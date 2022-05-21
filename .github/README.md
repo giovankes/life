@@ -10,4 +10,6 @@ installation can be done with:<br/>
 <br/>
 and if u don't use that then i humbly request u install it using:<br/>
 `(sudo) npm install -g n`
+<br/>
 
+the uri the API is hosted under is https://nami.api.giotje.cloud
