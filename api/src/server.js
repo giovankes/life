@@ -19,7 +19,7 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// NOTE: custom middleware //
+// NOTE: * custom middleware * //
 app.use(async (req, res, next) => {
   req.body = {
     ...req.body,
