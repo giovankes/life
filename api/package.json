@@ -5,7 +5,8 @@
   "author": "giovankes",
   "main": "./server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node ./src/server.js"
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "start": "node --exec babel-node ./src/server.js"
   },
   "license": "ISC",
   "dependencies": {
