@@ -6,7 +6,7 @@
   "main": "./server.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./src/server.js",
-    "start": "node --exec babel-node ./src/server.js"
+    "start": "babel-node ./src/server.js"
   },
   "license": "ISC",
   "dependencies": {
