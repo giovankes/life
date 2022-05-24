@@ -5,7 +5,8 @@ import consola from 'consola';
 
 import models, { connectDb } from './models';
 import routes from './routes';
-import { seed } from './functions';
+import { seed, spotify } from './functions';
+import { spotify_hook } from './hooks';
 const app = express();
 const { PORT } = process.env;
 
@@ -47,3 +48,7 @@ connectDb().then(async () => {
 // NOTE: * seed the database * //
 
 // seed();
+//
+//NOTE: * hooks * //
+//spotify();
+spotify_hook();
