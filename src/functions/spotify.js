@@ -23,9 +23,6 @@ const spotify_api = new SpotifyWebApi({
 //    throw new Error(e);
 //  }
 
-}
-
-function spotify() {
-
+function spotify() {}
 
 export default spotify;

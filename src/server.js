@@ -51,4 +51,4 @@ connectDb().then(async () => {
 //
 //NOTE: * hooks * //
 //spotify();
-spotify_hook();
+//spotify_hook();
