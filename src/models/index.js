@@ -9,7 +9,7 @@ const models = { User, Transport, Spotify };
 
 const connectDb = () => {
   consola.info('connected to database');
-  return mongoose.connect(process.env.uri);
+  return mongoose.connect(process.env.URI);
 };
 
 export { connectDb };
