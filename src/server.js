@@ -3,10 +3,6 @@ import express from 'express';
 import cors from 'cors';
 import consola from 'consola';
 
-import models, { connectDb } from './models';
-import routes from './routes';
-import { seed, spotify } from './functions';
-import { spotify_hook } from './hooks';
 const app = express();
 
 const { PORT } = process.env;
@@ -53,7 +49,7 @@ app.use(cors());
 //NOTE: * hooks * //
 //spotify();
 //spotify_hook();
-//
-app.listen(261120, () => {
+
+app.listen(12345, () => {
   consola.info(`app is listening on port: 261120`);
 });
