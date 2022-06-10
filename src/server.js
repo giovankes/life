@@ -5,8 +5,6 @@ import consola from 'consola';
 
 const app = express();
 
-const { PORT } = process.env;
-
 // NOTE: built-in middleware //
 app.use(
   express.json({
