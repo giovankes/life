@@ -8,6 +8,7 @@ import routes from './routes';
 import { seed, spotify } from './functions';
 import { spotify_hook } from './hooks';
 const app = express();
+
 const { PORT } = process.env;
 
 // NOTE: built-in middleware //
@@ -21,29 +22,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // NOTE: * custom middleware * //
-app.use(async (req, res, next) => {
-  req.body = {
-    ...req.body,
-  };
-  req.context = {
-    models,
-    me: await models.User.findByLogin('giovankes'),
-  };
-  next();
-});
+//app.use(async (req, res, next) => {
+//  req.body = {
+//    ...req.body,
+//  };
+//  req.context = {
+//    models,
+//    me: await models.User.findByLogin('giovankes'),
+//  };
+//  next();
+//});
 
 // NOTE: * Routes * //
 
-app.use('/session', routes.session);
-app.use('/users', routes.user);
-app.use('/messages', routes.message);
-app.use('/transport', routes.transport);
+//app.use('/session', routes.session);
+//app.use('/users', routes.user);
+//app.use('/messages', routes.message);
+//app.use('/transport', routes.transport);
 
-connectDb().then(async () => {
-  app.listen(PORT || 261120, () => {
-    consola.info(`app is listening on port: ${PORT}`);
-  });
-});
+//connectDb().then(async () => {
+//  app.listen(PORT || 261120, () => {
+//    consola.info(`app is listening on port: ${PORT}`);
+//  });
+//});
 
 // NOTE: * seed the database * //
 
@@ -52,3 +53,7 @@ connectDb().then(async () => {
 //NOTE: * hooks * //
 //spotify();
 //spotify_hook();
+//
+app.listen(261120, () => {
+  consola.info(`app is listening on port: 261120`);
+});
