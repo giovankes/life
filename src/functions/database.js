@@ -5,8 +5,8 @@ require('dotenv').config({
   path: '../../.env',
 });
 
-const { uri } = process.env;
-const client = new MongoClient(uri, {
+const { URI } = process.env;
+const client = new MongoClient(URI, {
   useUnifiedTopology: true,
 });
 
