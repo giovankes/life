@@ -1,5 +1,6 @@
 import { MongoClient } from 'mongodb';
 import consola from 'consola';
+import 'dotenv/config';
 
 const client = new MongoClient(process.env.URI, {
   useUnifiedTopology: true,
