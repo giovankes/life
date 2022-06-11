@@ -1,9 +1,14 @@
-require('dotenv').config();
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import consola from 'consola';
 
+import models, { connectDb } from './models';
+import routes from './routes';
+import { seed, spotify } from './functions';
+import { spotify_hook } from './hooks';
 const app = express();
+const { PORT } = process.env;
 
 // NOTE: built-in middleware //
 app.use(
