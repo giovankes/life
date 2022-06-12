@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import consola from 'consola';
 
+const app = express();
+
 app.use(
   express.json({
     limit: '100mb',
