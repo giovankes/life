@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import consola from 'consola';
 
+import models, { connect_to_db } from './models';
+import routes from './routes';
 const app = express();
 
 app.use(
@@ -14,13 +16,22 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// NOTE: * Routes * //
-//connectDb().then(async () => {
-//  app.listen(PORT || 261120, () => {
-//    consola.info(`app is listening on port: ${PORT}`);
-//  });
-//});
+app.use(async (req, res, next) => {
+  req.body = {
+    ...req.body,
+  };
 
-app.listen(process.env.PORT, () => {
-  consola.info(`app is listening on port: ${process.env.PORT}`);
+  req.context = {
+    models,
+    me: await models.User.findByLogin('giovankes'),
+  };
+  next();
+});
+
+app.use('/users', routes.user);
+
+connect_to_db().then(() => {
+  app.listen(process.env.PORT, () => {
+    consola.info(`app is listening on port: ${process.env.PORT}`);
+  });
 });
