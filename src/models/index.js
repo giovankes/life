@@ -2,8 +2,9 @@ import mongoose from 'mongoose';
 import consola from 'consola';
 
 import User from './User.js';
+import Log from './Log.js';
 
-const models = { User };
+const models = { User, Log };
 
 function connect_to_db() {
   consola.info('connected to database');
