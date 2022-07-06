@@ -32,6 +32,6 @@ app.use('/users', routes.user);
 app.use('/test', routes.test);
 connect_to_db().then(() => {
   app.listen(process.env.PORT, () => {
-    consola.info(`app is listening on port: ${process.env.PORT}`);
+    consola.info(`app is listen on port: ${process.env.PORT}`);
   });
 });
