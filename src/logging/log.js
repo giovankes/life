@@ -12,7 +12,7 @@ async function log(route, req) {
       was_finished: true,
     },
   });
-  new_log_entry.save();
+  if (new_log_entry) && new_log_entry.save();
   return consola.info('new log entry added');
 }
 
