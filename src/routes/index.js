@@ -1,3 +1,4 @@
 import user from './user.js';
 import test from './test.js';
-export default { user, test };
+import root from './root';
+export default { user, test, root };

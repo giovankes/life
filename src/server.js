@@ -30,6 +30,8 @@ app.use(async (req, res, next) => {
 
 app.use('/users', routes.user);
 app.use('/test', routes.test);
+app.use('/', routes.root);
+
 connect_to_db().then(() => {
   app.listen(process.env.PORT, () => {
     consola.info(`app is listen on port: ${process.env.PORT}`);
